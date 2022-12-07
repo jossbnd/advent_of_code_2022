@@ -35,7 +35,7 @@ func main() {
 		}
 	}
 
-	// Part Two
+	//Part Two
 	message := input[:14]
 
 	for i := len(message); i < len(input); i++ {
