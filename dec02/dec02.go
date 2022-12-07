@@ -11,7 +11,7 @@ func main() {
 	dat, _ := os.ReadFile("./input02.txt")
 	input := strings.Split(string(dat), "\r\n")
 
-	// partOne
+	// Part One
 	scoreMap := map[string]map[string]int{
 		"A": {
 			"X": 3,
@@ -50,7 +50,7 @@ func main() {
 
 	fmt.Println("Part One Answer:", totalScore)
 
-	// partTwo
+	// Part Two
 	myPlayMap := map[string]map[string]string{
 		"A": {
 			"X": "Z",
@@ -81,6 +81,5 @@ func main() {
 		totalScore += scoreMap[opponentPlay][myPlay] + scoreMap["shape"][myPlay]
 	}
 
-	// Part Two
 	fmt.Println("Part Two Answer:", totalScore)
 }
