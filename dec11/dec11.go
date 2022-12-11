@@ -34,7 +34,8 @@ func main() {
 
 	var count [8]int
 
-	lcm := uint64(1)
+	// Part Two
+	// lcm := uint64(19 * 3 * 13 * 7 * 5 * 11 * 17 * 2)
 
 	for i := 0; i < 20; i++ {
 		monkey = 0
@@ -116,9 +117,6 @@ func main() {
 
 				}
 
-				if i == 0 {
-					lcm *= test
-				}
 				monkey++
 				continue
 			}
@@ -130,4 +128,6 @@ func main() {
 	countSlice := count[:]
 	sort.Ints(countSlice)
 	fmt.Println("Part One Answer:", countSlice[len(countSlice)-1]*countSlice[len(countSlice)-2])
+	// fmt.Println("Part Two Answer:", countSlice[len(countSlice)-1]*countSlice[len(countSlice)-2])
+
 }
