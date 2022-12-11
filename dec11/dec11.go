@@ -22,19 +22,19 @@ func main() {
 	dat, _ := os.ReadFile("./input11.txt")
 	input := strings.Split(string(dat), "\r\n")
 
-	monkeys := make(map[int][]int)
+	monkeys := make(map[int][]uint64)
 	monkey := 0
 
 	var operationSign string
-	var operationNumber int
+	var operationNumber uint64
 	var old bool
-	var test int
+	var test uint64
 	var receiverTrue int
 	var receiverFalse int
 
 	var count [8]int
 
-	lcm := 1
+	lcm := uint64(1)
 
 	for i := 0; i < 20; i++ {
 		monkey = 0
@@ -46,7 +46,7 @@ func main() {
 					re := regexp.MustCompile(`[0-9]+`)
 					items := re.FindAllString(line, -1)
 					for _, val := range items {
-						item, _ := strconv.Atoi(val)
+						item, _ := strconv.ParseUint(val, 10, 64)
 						monkeys[monkey] = append(monkeys[monkey], item)
 					}
 
@@ -65,14 +65,14 @@ func main() {
 				}
 
 				if !old {
-					operationNumber, _ = strconv.Atoi(l[7])
+					operationNumber, _ = strconv.ParseUint(l[7], 10, 64)
 				}
 				continue
 			}
 
 			if index == 3+monkey*7 {
 				l := strings.Split(string(line), " ")
-				test, _ = strconv.Atoi(l[5])
+				test, _ = strconv.ParseUint(l[5], 10, 64)
 				continue
 			}
 
